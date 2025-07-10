@@ -7,7 +7,7 @@ import DeveloperAnimation from './Main Scene';
 import { useEffect, useState } from 'react';
 
 const Background = styled.div`
-  min-height: 100vh;
+  min-height: 80vh;
   padding: 2rem 1rem;
   background-color: #330033;
   position: relative;
@@ -64,8 +64,8 @@ const HeroText = styled.div`
 const HeroAnimation = styled.div`
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
 `;
 
 const SectionBox = styled.div`
@@ -238,7 +238,7 @@ export default function LandingPage() {
           </h5>
         </HeroText>
         <HeroAnimation>
-          <DeveloperAnimation />
+        <DeveloperAnimation />
         </HeroAnimation>
       </HeroBox>
 
