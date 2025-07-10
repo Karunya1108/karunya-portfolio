@@ -4,6 +4,7 @@ import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 import { Typewriter } from 'react-simple-typewriter';
 import DeveloperAnimation from './Main Scene';
+import { useEffect, useState } from 'react';
 
 const Background = styled.div`
   min-height: 100vh;
@@ -209,6 +210,13 @@ const BackgroundParticles = () => {
 };
 
 export default function LandingPage() {
+   const [screenWidth, setScreenWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    // ✅ Now safe to access window
+    setScreenWidth(window.innerWidth);
+  }, []);
+
   return (
     <Background>
       <BackgroundParticles />
