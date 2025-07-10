@@ -7,7 +7,7 @@ import DeveloperAnimation from './Main Scene';
 import { useEffect, useState } from 'react';
 
 const Background = styled.div`
-  min-height: 80vh;
+  min-height: 100vh;
   padding: 2rem 1rem;
   background-color: #330033;
   position: relative;
@@ -66,17 +66,7 @@ const HeroAnimation = styled.div`
   display: flex;
   justify-content: right;
   align-items: right;
-  width: 400px;  /* Adjust the width */
-  height: 400px; /* Adjust the height */
-  
-  @media (max-width: 768px) {
-    width: 300px;
-    height: 300px;
-  }
-
-  @media (max-width: 480px) {
-    width: 250px;
-    height: 250px;
+ 
 `;
 
 const SectionBox = styled.div`
@@ -221,13 +211,7 @@ const BackgroundParticles = () => {
 };
 
 export default function LandingPage() {
-   const [screenWidth, setScreenWidth] = useState<number | null>(null);
-
-  useEffect(() => {
-    // ✅ Now safe to access window
-    setScreenWidth(window.innerWidth);
-  }, []);
-
+  const [width, setWidth] = useState<number | null>(null);
   return (
     <Background>
       <BackgroundParticles />
