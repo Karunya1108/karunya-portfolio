@@ -19,11 +19,9 @@ const Background = styled.div`
 const HeroBox = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap; // Add this
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  max-width: none;
   padding: 5rem;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(5px);
@@ -31,7 +29,13 @@ const HeroBox = styled.div`
   box-shadow: 4px 0 30px rgba(255, 255, 255, 0.05);
   z-index: 1;
   position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem;
+  }
 `;
+
 
 const HeroText = styled.div`
   flex: 1;
@@ -60,7 +64,13 @@ const HeroAnimation = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  canvas, img, svg {
+    max-width: 100%;
+    height: auto;
+  }
 `;
+
 
 
 const GlassBox = styled.div`
