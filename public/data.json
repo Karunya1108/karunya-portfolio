@@ -1,0 +1,41 @@
+{
+  "name": "KARUNYA.V",
+  "location": "Madipakkam, Chennai-91",
+  "email": "karunyavenkatachalam11@gmail.com",
+  "phone": "8838734348",
+  "careerObjective": "Enthusiastic Software Engineer with skills in UI/UX design and coding.",
+  "skills": ["UI/UX", "C", "Python","Frontend developing"],
+  "education": [
+    {
+      "title": "SSLC",
+      "school": "Sairam Vidyalaya",
+      "year": "2020",
+      "score": "85%"
+    },
+    {
+      "title": "Higher Secondary",
+      "school": "Sairam Vidyalaya",
+      "year": "2022",
+      "score": "90%"
+    },
+    {
+      "title": "B.E. Computer Science",
+      "school": "KCG College of Technology",
+      "year": "Ongoing",
+      "score": "83.4%"
+    }
+  ],
+  "projects": [
+    {
+      "title": "BEATAWRE",
+      "description": "Heart attack detection using ML and Twilio emergency alerts."
+      
+    }
+  ],
+  "certifications": [
+    { "title": "1 month online internship in Technohacks as web developer" },
+    { "title": "MongoDB Course Certificate" },
+    { "title": "3 months online internship in Mitbots as UI/UX developer" },
+    { "title": "NPTEL course certification on programming in Java" }
+  ]
+}
