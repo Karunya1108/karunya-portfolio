@@ -5,7 +5,6 @@ import { loadSlim } from 'tsparticles-slim';
 import { Typewriter } from 'react-simple-typewriter';
 import DeveloperAnimation from './Main Scene';
 
-
 const Background = styled.div`
   min-height: 100vh;
   padding: 2rem 1rem;
@@ -19,41 +18,43 @@ const Background = styled.div`
 const HeroBox = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; // Add this
   justify-content: space-between;
   align-items: center;
-  padding: 5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 4rem 2rem;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(5px);
   border-radius: 0 50px 50px 0;
   box-shadow: 4px 0 30px rgba(255, 255, 255, 0.05);
   z-index: 1;
-  position: relative;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
   }
 `;
 
-
 const HeroText = styled.div`
   flex: 1;
+  min-width: 300px;
+
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     color: #fbd46d;
   }
 
   p {
-    font-size: 1.5rem;
-    color: #f0f0f0;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
+    color: #f0f0f0;
   }
 
   h5 {
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #ddd;
     margin-top: 1rem;
   }
@@ -64,43 +65,30 @@ const HeroAnimation = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  canvas, img, svg {
-    max-width: 100%;
-    height: auto;
-  }
 `;
 
-
-
-const GlassBox = styled.div`
+const SectionBox = styled.div`
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
-  padding: 3rem 2rem;
-  max-width: 900px; 
-  min-height: 600px; 
   margin: 2rem auto;
   border-radius: 20px;
   color: white;
-  text-align: left;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  z-index: 1;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
+  width: 90%;
+  max-width: 1000px;
 
   &:hover {
-    transform: translateY(-5px) scale(1.025);
+    transform: translateY(-5px) scale(1.015);
     box-shadow: 0 0 25px rgba(138, 43, 226, 0.3);
     border-color: #9b59b6;
   }
+`;
 
-  div {
-    flex: 1;
-  }
+const SectionInner = styled.div`
+  padding: 3rem 2rem;
+  text-align: left;
 
   h1 {
     font-size: 2.5rem;
@@ -109,8 +97,18 @@ const GlassBox = styled.div`
   }
 
   p {
-    font-size: 1.5rem;
-    color: rgb(255, 255, 255);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
   }
 `;
 
@@ -161,6 +159,7 @@ const Footer = styled.footer`
   z-index: 1;
   position: relative;
 `;
+
 const BackgroundParticles = () => {
   const particlesInit = async (engine: any) => {
     await loadSlim(engine);
@@ -230,46 +229,34 @@ export default function LandingPage() {
             />
           </h5>
         </HeroText>
-
         <HeroAnimation>
           <DeveloperAnimation />
         </HeroAnimation>
       </HeroBox>
 
-      
-    {/* About Box */}
-<GlassBox>
-  <div>
-    <h1>About Me</h1>
-    <p>
-      I am an enthusiastic and self-driven Software Engineer with a deep passion for UI/UX design and intuitive coding. I thrive on crafting seamless, user-centric digital experiences that blend creativity with functionality.
-    </p>
-    <br />
-    <p>
-      I enjoy solving real-world problems through code, with a continuous learning mindset and an eye for detail. My interests lie especially in Full Stack Development, where I aim to build scalable, responsive web applications, and in Automation, where I explore streamlining processes to improve productivity and user satisfaction.
-    </p>
-    <br />
-    <p>
-      With a solid grasp of HTML, CSS and foundational programming principles, I approach each project with a balance of logic and creativity. My goal is to contribute to impactful software solutions that not only function well but also delight the end user through thoughtful design and smooth interactions.
-    </p>
-  </div>
-</GlassBox>
+      <SectionBox>
+        <SectionInner>
+          <h1>About Me</h1>
+          <p>I am an enthusiastic and self-driven Software Engineer with a deep passion for UI/UX design and intuitive coding. I thrive on crafting seamless, user-centric digital experiences that blend creativity with functionality.</p>
+          <br />
+          <p>I enjoy solving real-world problems through code, with a continuous learning mindset and an eye for detail. My interests lie especially in Full Stack Development, where I aim to build scalable, responsive web applications, and in Automation, where I explore streamlining processes to improve productivity and user satisfaction.</p>
+          <br />
+          <p>With a solid grasp of HTML, CSS and foundational programming principles, I approach each project with a balance of logic and creativity. My goal is to contribute to impactful software solutions that not only function well but also delight the end user through thoughtful design and smooth interactions.</p>
+        </SectionInner>
+      </SectionBox>
 
-{/* Contact Box */}
-<GlassBox>
-  <div>
-    <h1>Contact Me</h1>
-    <ContactForm onSubmit={(e) => e.preventDefault()}>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required />
-      <button type="submit">Send Message</button>
-    </ContactForm>
-  </div>
-</GlassBox>
+      <SectionBox>
+        <SectionInner>
+          <h1>Contact Me</h1>
+          <ContactForm onSubmit={(e) => e.preventDefault()}>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required />
+            <button type="submit">Send Message</button>
+          </ContactForm>
+        </SectionInner>
+      </SectionBox>
 
-
-      {/* Footer */}
       <Footer>&copy; {new Date().getFullYear()} Karunya</Footer>
     </Background>
   );
