@@ -66,6 +66,17 @@ const HeroAnimation = styled.div`
   display: flex;
   justify-content: right;
   align-items: right;
+  width: 400px;  /* Adjust the width */
+  height: 400px; /* Adjust the height */
+  
+  @media (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media (max-width: 480px) {
+    width: 250px;
+    height: 250px;
 `;
 
 const SectionBox = styled.div`
