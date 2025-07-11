@@ -66,7 +66,10 @@ const HeroAnimation = styled.div`
   display: flex;
   justify-content: right;
   align-items: right;
- 
+ @media (max-width: 768px) {
+  flex-direction: column;
+}
+
 `;
 
 const SectionBox = styled.div`
