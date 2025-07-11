@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   padding: 1.2rem 2rem;
   background: #210025;
