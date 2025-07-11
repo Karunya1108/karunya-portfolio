@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 import { Typewriter } from 'react-simple-typewriter';
 import DeveloperAnimation from './Main Scene';
-import { useEffect, useState } from 'react';
 
 const Background = styled.div`
   min-height: 100vh;
@@ -23,7 +22,7 @@ const HeroBox = styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 10rem 2rem;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(5px);
   border-radius: 0 50px 50px 0;
@@ -38,38 +37,57 @@ const HeroBox = styled.div`
 `;
 
 const HeroText = styled.div`
-  flex: 1;
+  flex: 2;
   min-width: 300px;
 
   h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    margin-bottom: 4rem;
     color: #fbd46d;
   }
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #f0f0f0;
   }
 
   h5 {
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #ddd;
     margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    h5 {
+      font-size: 1rem;
+    }
   }
 `;
 
 const HeroAnimation = styled.div`
   flex: 1;
   display: flex;
-  justify-content: right;
-  align-items: right;
- @media (max-width: 768px) {
-  flex-direction: column;
-}
+  justify-content: center;
+  align-items: center;
 
+  canvas, div {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
 `;
 
 const SectionBox = styled.div`
@@ -108,9 +126,12 @@ const SectionInner = styled.div`
   }
 
   @media (max-width: 768px) {
+    text-align: center;
+
     h1 {
       font-size: 2rem;
     }
+
     p {
       font-size: 1.1rem;
     }
@@ -125,10 +146,10 @@ const ContactForm = styled.form`
 
   input,
   textarea {
-    padding: 2rem;
+    padding: 1rem;
     border: none;
     border-radius: 8px;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     background: rgba(255, 255, 255, 0.1);
     color: white;
   }
@@ -150,6 +171,14 @@ const ContactForm = styled.form`
 
     &:hover {
       background: #9f5bd0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    input,
+    textarea,
+    button {
+      font-size: 1rem;
     }
   }
 `;
@@ -214,7 +243,6 @@ const BackgroundParticles = () => {
 };
 
 export default function LandingPage() {
-  const [width, setWidth] = useState<number | null>(null);
   return (
     <Background>
       <BackgroundParticles />
@@ -236,7 +264,7 @@ export default function LandingPage() {
           </h5>
         </HeroText>
         <HeroAnimation>
-        <DeveloperAnimation />
+          <DeveloperAnimation />
         </HeroAnimation>
       </HeroBox>
 
