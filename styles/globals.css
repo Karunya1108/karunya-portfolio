@@ -20,3 +20,7 @@ body {
   background: linear-gradient(to bottom right, #0d0d0d, #1a0033);
   color: #f0f0f0;
 }
+body {
+  word-wrap: break-word;
+  overflow-x: hidden;
+}

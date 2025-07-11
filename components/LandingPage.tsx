@@ -80,12 +80,12 @@ const HeroAnimation = styled.div`
   justify-content: center;
   align-items: center;
 
-  canvas, div {
-    max-width: 350px;
-    width: 100%;
-  }
+  // NEW: Add size constraints
+  max-width: 400px;
+  width: 100%;
 
   @media (max-width: 768px) {
+    max-width: 250px;
     margin-top: 2rem;
   }
 `;
@@ -101,6 +101,16 @@ const SectionBox = styled.div`
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
   width: 90%;
   max-width: 1000px;
+  @media (max-width: 768px) {
+  padding: 2rem 1rem;
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.1rem;
+  }
+}
+
 
   &:hover {
     transform: translateY(-5px) scale(1.015);
