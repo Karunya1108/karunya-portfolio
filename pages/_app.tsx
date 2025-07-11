@@ -2,10 +2,8 @@ import type { AppProps } from 'next/app';
 import NavBar from '../components/NavBar';
 import { createGlobalStyle } from 'styled-components';
 import '../styles/globals.css';
-
-
-
-const GlobalStyle = createGlobalStyle`
+import GlobalStyle from '../styles/GlobalStyle';
+`
   * {
     margin: 0;
     padding: 0;

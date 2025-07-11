@@ -16,9 +16,19 @@ const Nav = styled.nav`
   top: 0;
   z-index: 999;
 `;
+const NavLink = styled.a`
+  font-size: 1.1rem;
+  margin: 0 0.8rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+`;
+
 
 const Logo = styled.div`
-  font-size: 1.5rem;
+  font-size: 1rem;
 `;
 
 const Menu = styled.div`
@@ -46,6 +56,8 @@ const Menu = styled.div`
     }
   }
 `;
+
+
 
 export default function NavBar() {
   return (
