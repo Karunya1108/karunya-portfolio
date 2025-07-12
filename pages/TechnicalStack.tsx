@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import TechnicalStack from '../components/TechnicalStack';
-import data from '../public/TechnicalStackData.json';
+import data from '../public/TechnicalStackdata.json';
 import BackgroundParticles from '../components/Particles';
 const Background = styled.div`
   min-height: 100vh;
