@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Certifications from '../components/Certifications';
-import certificationsData from '../public/certificationsData.json';
+import certificationsData from '../public/CertificationsData.json';
 import BackgroundParticles from '../components/Particles';
 
 const Background = styled.div`
