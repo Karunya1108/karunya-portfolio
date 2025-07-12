@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import TechnicalStack from '../components/TechnicalStack';
-import data from '../public/data.json';
-import Particles from 'react-tsparticles';
-import { loadSlim } from 'tsparticles-slim';
-
+import data from '../public/TechnicalStackData.json';
+import BackgroundParticles from '../components/Particles';
 const Background = styled.div`
   min-height: 100vh;
   padding: 2rem 1rem;
@@ -12,67 +10,27 @@ const Background = styled.div`
   overflow: hidden;
   z-index: 0;
   color: #f0f0f0;
+
+  #tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
 `;
 
 const PageTitle = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2.8rem;
-  color:#fbd46d;
+  color: #fbd46d;
 `;
-const BackgroundParticles = () => {
-  const particlesInit = async (engine: any) => {
-    await loadSlim(engine);
-  };
-
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={{
-        fullScreen: { enable: true, zIndex: -1 },
-        particles: {
-          number: {
-            value: 50,
-            density: { enable: true, value_area: 800 },
-          },
-          color: { value: '#ffffff' },
-          shape: { type: 'circle' },
-          opacity: {
-            value: 0.5,
-            random: true,
-          },
-          size: {
-            value: 20,
-            random: true,
-          },
-          move: {
-            enable: true,
-            speed: 0.8,
-            direction: 'none',
-            outModes: { default: 'out' },
-          },
-        },
-        interactivity: {
-          events: {
-            onHover: { enable: true, mode: 'repulse' },
-            resize: true,
-          },
-          modes: {
-            repulse: { distance: 50, duration: 0.4 },
-          },
-        },
-        detectRetina: true,
-      }}
-    />
-  );
-};
-
-
 export default function StackPage() {
   return (
     <Background>
-       <BackgroundParticles />
+      <BackgroundParticles />
       <PageTitle>Technical Skills</PageTitle>
       <TechnicalStack data={data.skills} />
     </Background>

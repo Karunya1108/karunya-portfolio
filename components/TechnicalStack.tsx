@@ -1,4 +1,3 @@
-// components/TechnicalStack.tsx
 import styled from 'styled-components';
 import { FaCode, FaPaintBrush, FaLaptopCode } from 'react-icons/fa';
 
@@ -13,21 +12,13 @@ const Section = styled.div`
   gap: 5rem;
 `;
 
-const Title = styled.h2`
-  color: white;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
-`;
-
 const Grid = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 5rem;
-  margin-top: 5rem; 
+  margin-top: 8rem;
 `;
-
 
 const SkillCard = styled.div`
   background: rgba(255, 255, 255, 0.06);
@@ -61,6 +52,8 @@ const SkillCard = styled.div`
 `;
 
 export default function TechnicalStack({ data }: Props) {
+  if (!data || !Array.isArray(data)) return null;
+
   return (
     <Section>
       <Grid>

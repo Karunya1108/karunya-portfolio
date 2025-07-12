@@ -1,0 +1,21 @@
+{
+  "projects": [
+    {
+      "title": "BeatAware – Heart Attack Prediction App",
+      "subtitle": "Heart attack detection using ML and emergency alerts.",
+      "paragraphs": [
+        "BeatAware is an intelligent health monitoring application designed to predict heart attacks and related cardiovascular problems before they happen.",
+        "It uses advanced machine learning models trained on historical data from patients who previously suffered from heart-related conditions. By analyzing this data, the system detects early signs of potential heart issues.",
+        "The system is linked to a wearable device that continuously monitors vital signs like heart rate and oxygen levels in real-time.",
+        "If unusual patterns are detected, the app immediately alerts the user or medical professionals — ensuring timely medical attention and potentially saving lives."
+      ],
+      "highlights": [
+        "BeatAware",
+        "ML",
+        "machine learning",
+        "wearable device",
+        "immediately alerts"
+      ]
+    }
+  ]
+}

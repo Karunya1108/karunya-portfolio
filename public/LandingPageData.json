@@ -1,0 +1,35 @@
+{
+  "hero": {
+    "title": "Hi, I'm Karunya...",
+    "paragraphs": [
+      "A passionate developer turning ideas into interactive experiences.",
+
+      "Designing interfaces. Developing logic. Delivering impact."
+    ],
+    "typewriterWords": ["AI Enthusiast", "Frontend Developer", "UI/UX Developer"]
+  },
+  "about": {
+    "heading": "About Me",
+    "paragraphs": [
+      "I am an enthusiastic and self-driven Software Engineer with a deep passion for UI/UX design and intuitive coding. I thrive on crafting seamless, user-centric digital experiences that blend creativity with functionality.",
+
+      "I enjoy solving real-world problems through code, with a continuous learning mindset and an eye for detail. My interests lie especially in Full Stack Development, where I aim to build scalable, responsive web applications, and in Automation, where I explore streamlining processes to improve productivity and user satisfaction.",
+      
+      "With a solid grasp of HTML, CSS and foundational programming principles, I approach each project with a balance of logic and creativity. My goal is to contribute to impactful software solutions that not only function well but also delight the end user through thoughtful design and smooth interactions."
+    ]
+  },
+  "contact": {
+    "heading": "Contact Me",
+    "form": {
+      "namePlaceholder": "Your Name",
+      "emailPlaceholder": "Your Email",
+      "messagePlaceholder": "Your Message",
+      "buttonText": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Karunya"
+  }
+}
+
+

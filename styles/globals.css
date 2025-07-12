@@ -1,26 +1,20 @@
-/* styles/globals.css */
-/* styles/globals.css */
-
-body,
-html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #0d0d0d, #1a0033);
   color: #f0f0f0;
 }
+
 body {
   word-wrap: break-word;
   overflow-x: hidden;
 }
+/* Add this to your global styles (globals.css) */
+#tsparticles canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  height: 100% !important;
+  width: 100% !important;
+  z-index: -1 !important;
+}
+

@@ -12,6 +12,10 @@ const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
   }
+  #tsparticles {
+  position: absolute !important;
+  z-index: 0 !important;
+}
 `;
 
 export default GlobalStyle;

@@ -1,0 +1,28 @@
+{
+  "certifications": [
+    {
+      "title": "1-Month Internship as Web Developer",
+      "issuer": "Technohacks",
+      "year": "2024",
+      "description": "Completed an online internship focused on building and deploying web applications using modern frontend technologies."
+    },
+    {
+      "title": "MongoDB Course Certificate",
+      "issuer": "MongoDB University",
+      "year": "2024",
+      "description": "Learned MongoDB fundamentals including CRUD operations, aggregation pipelines, and schema design."
+    },
+    {
+      "title": "3-Month Internship as UI/UX Developer",
+      "issuer": "Mitbots",
+      "year": "2025",
+      "description": "Worked on UI/UX design projects including wireframing, prototyping, and user research for real-world applications."
+    },
+    {
+      "title": "NPTEL Programming in Java",
+      "issuer": "NPTEL (IIT)",
+      "year": "2024",
+      "description": "Successfully completed a certified course covering object-oriented programming in Java, data structures, and exception handling."
+    }
+  ]
+}

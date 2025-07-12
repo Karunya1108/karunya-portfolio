@@ -1,85 +1,89 @@
-// components/Certifications.tsx
 import styled from 'styled-components';
-import { FaCertificate } from 'react-icons/fa';
 
-type CertItem = {
+type CertificationItem = {
   title: string;
+  description: string;
+    issuer: string;   // ✅ Add this
+  year: string;     // ✅ And this
 };
 
 type Props = {
-  data: CertItem[];
+  data: CertificationItem[];
 };
 
-const Section = styled.div`
-  text-align: center;
-`;
-
-const Title = styled.h2`
-  color: white;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-`;
-
-const Grid = styled.div`
-  padding: 1rem 1rem; 
-  width: 1000px; 
-  margin: 0 auto;  
-  border-radius: 12px;
+const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  min-width: 80px;
-  gap: 2rem;
-  justify-content: center;
   flex-direction: column;
-  margin-top: 5rem;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 `;
-
-
 
 const Card = styled.div`
- background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
-  padding:1.5rem 1.2rem;
-  min-width: 160px;
-  border-radius: 14px;
-  color: white;
-  text-align: center;
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
- 
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 0 25px rgba(138, 43, 226, 0.3);
+    transform: scale(1.01);
     border-color: #9b59b6;
+    box-shadow: 0 0 25px rgba(155, 89, 182, 0.3);
   }
 
-  h3 {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #f2f2f2;
-    margin: 0;
-
-    svg {
-      margin-right: 0.6rem;
-      color: #fcd34d;
-    }
+  &:hover .description {
+    max-height: 500px;
+    opacity: 1;
   }
+`;
+
+const Title = styled.div`
+  font-weight: 600;
+  color: #fbd46d;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  &::before {
+    content: '🌟';
+    font-size: 1.3rem;
+  }
+`;
+
+const Meta = styled.div`
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 0.4rem;
+`;
+
+const Description = styled.p`
+  color: #ddd;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
 `;
 
 export default function Certifications({ data }: Props) {
   return (
-    <Section>
-      <Grid>
-        {data.map((cert, index) => (
-          <Card key={index}>
-            <h3><FaCertificate /> {cert.title}</h3>
-          </Card>
-        ))}
-      </Grid>
-    </Section>
+    <Container>
+      {data.map((cert, index) => (
+        <Card key={index}>
+          <Title>{cert.title}</Title>
+          <Meta>{cert.issuer} — {cert.year}</Meta>
+          <Description className="description">{cert.description}</Description>
+        </Card>
+      ))}
+    </Container>
   );
 }
