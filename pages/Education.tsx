@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import EducationTimeline from '../components/Education';
-import educationData from '../public/educationData.json';
+import educationData from '../public/EducationData.json';
 import BackgroundParticles from '../components/Particles';
 
 const Background = styled.div`
